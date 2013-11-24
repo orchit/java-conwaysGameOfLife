@@ -9,25 +9,23 @@ import static org.junit.Assert.assertFalse;
 public class CellTest {
 
     @Test
-    public void weHaveLivingCells(){
-        assertTrue(new Cell().isAlive());
+    public void weHaveLivingCells() {
+        assertTrue(Cell.LIVING.isAlive());
     }
 
     @Test
-    public void weHaveDeadCells(){
-        assertFalse(new Cell(false).isAlive());
+    public void weHaveDeadCells() {
+        assertFalse(Cell.DEAD.isAlive());
     }
 
     private static class Cell {
+        public static Cell LIVING = new Cell(true);
+        public static Cell DEAD = new Cell(false);
 
         private boolean alive;
 
-        private Cell() {
-            alive = true;
-        }
-
-        public Cell(boolean isAlive) {
-            alive=isAlive;
+        private Cell(boolean isAlive) {
+            alive = isAlive;
         }
 
 
