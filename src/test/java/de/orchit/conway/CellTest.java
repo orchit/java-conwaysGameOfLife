@@ -7,9 +7,11 @@ public class CellTest {
 
     public void weHaveLivingCells(){
         assertTrue(new Cell().isAlive());
-
     }
 
     private static class Cell {
+        public boolean isAlive() {
+            return true;
+        }
     }
 }
