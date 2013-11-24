@@ -1,12 +1,6 @@
 package de.orchit.conway;
 
-/**
-* Created with IntelliJ IDEA.
-* User: pcornelissen
-* Date: 24.11.13
-* Time: 21:23
-* To change this template use File | Settings | File Templates.
-*/
+
 class Field {
     private final int width;
     private final int height;
