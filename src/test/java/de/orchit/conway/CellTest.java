@@ -1,10 +1,12 @@
 package de.orchit.conway;
 
 
+import static junit.framework.TestCase.assertTrue;
+
 public class CellTest {
 
     public void weHaveLivingCells(){
-        new Cell();
+        assertTrue(new Cell().isAlive());
 
     }
 
