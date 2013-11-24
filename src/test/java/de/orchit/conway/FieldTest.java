@@ -16,6 +16,17 @@ public class FieldTest {
         }
     }
 
+    @Test
+    public void deadFieldIsAfterEvolveStillDead(){
+        Field field = new Field();
+        field=field.evolve();
+        for (Cell[] cells : field.getField()) {
+            for(int i=0;i<cells.length;i++){
+                assertFalse(cells[i].isAlive());
+            }
+        }
+    }
+
     private static class Field{
         private Cell [][] field;
 
@@ -30,6 +41,17 @@ public class FieldTest {
 
         private Cell[][] getField() {
             return field;
+        }
+
+        public Field evolve() {
+            Field result = new Field();
+            for(int x=0;x<result.getField().length;x++){
+                Cell[] cells=result.getField()[x];
+                for(int y=0;y<cells.length;i++){
+                    cells[y]=field[x][y].evolve(0);
+                }
+            }
+            return result;
         }
     }
 }
