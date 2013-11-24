@@ -7,4 +7,7 @@ public class CellTest {
         new Cell();
 
     }
+
+    private static class Cell {
+    }
 }
