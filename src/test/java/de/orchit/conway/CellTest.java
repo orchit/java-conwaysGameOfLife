@@ -24,6 +24,12 @@ public class CellTest {
         assertTrue(cell.evolve(2).isAlive());
     }
 
+    @Test
+    public void aCellWith3NeighborsWillStayAliveAfterEvolve(){
+        final Cell cell = Cell.LIVING;
+        assertTrue(cell.evolve(3).isAlive());
+    }
+
     private static class Cell {
         public static Cell LIVING = new Cell(true);
         public static Cell DEAD = new Cell(false);
