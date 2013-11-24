@@ -72,6 +72,12 @@ public class CellTest {
         assertFalse(cell.evolve(4).isAlive());
     }
 
+    @Test
+    public void aDeadCellWith4NeighborsWillStayDeadAfterEvolve(){
+        final Cell cell = Cell.DEAD;
+        assertFalse(cell.evolve(4).isAlive());
+    }
+
     private static class Cell {
         public static Cell LIVING = new Cell(true);
         public static Cell DEAD = new Cell(false);
