@@ -19,13 +19,19 @@ public class CellTest {
     }
 
     @Test
-    public void aCellWith2NeighborsWillStayAliveAfterEvolve(){
+    public void aLivingCellWith1NeighborWillDieAfterEvolve(){
+        final Cell cell = Cell.LIVING;
+        assertFalse(cell.evolve(1).isAlive());
+    }
+
+    @Test
+    public void aLivingCellWith2NeighborsWillStayAliveAfterEvolve(){
         final Cell cell = Cell.LIVING;
         assertTrue(cell.evolve(2).isAlive());
     }
 
     @Test
-    public void aCellWith3NeighborsWillStayAliveAfterEvolve(){
+    public void aLivingCellWith3NeighborsWillStayAliveAfterEvolve(){
         final Cell cell = Cell.LIVING;
         assertTrue(cell.evolve(3).isAlive());
     }
@@ -46,6 +52,7 @@ public class CellTest {
         }
 
         public Cell evolve(int neighborCount) {
+            if(neighborCount==1) return Cell.DEAD;
             return Cell.LIVING;
         }
     }
