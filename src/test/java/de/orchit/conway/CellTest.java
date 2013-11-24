@@ -25,6 +25,12 @@ public class CellTest {
     }
 
     @Test
+    public void aDeadCellWith0NeighborsWillStayDeadAfterEvolve(){
+        final Cell cell = Cell.DEAD;
+        assertFalse(cell.evolve(0).isAlive());
+    }
+
+    @Test
     public void aLivingCellWith1NeighborWillDieAfterEvolve(){
         final Cell cell = Cell.LIVING;
         assertFalse(cell.evolve(1).isAlive());
