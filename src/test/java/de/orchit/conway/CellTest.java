@@ -61,6 +61,12 @@ public class CellTest {
     }
 
     @Test
+    public void aDeadCellWith3NeighborsWillBeRebornAfterEvolve(){
+        final Cell cell = Cell.DEAD;
+        assertTrue(cell.evolve(3).isAlive());
+    }
+
+    @Test
     public void aLivingCellWith4NeighborsWillDieAfterEvolve(){
         final Cell cell = Cell.LIVING;
         assertFalse(cell.evolve(4).isAlive());
